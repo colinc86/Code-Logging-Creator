@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		55D028161B5F40FA0013EC13 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D028151B5F40FA0013EC13 /* main.m */; };
+		55D028221B5F410B0013EC13 /* CLCCodeReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D0281D1B5F410B0013EC13 /* CLCCodeReader.m */; };
+		55D028231B5F410B0013EC13 /* CLCCodeWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D0281F1B5F410B0013EC13 /* CLCCodeWriter.m */; };
+		55D028241B5F410B0013EC13 /* CLCInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D028211B5F410B0013EC13 /* CLCInterface.m */; };
+		55D028271B5F41A90013EC13 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 55D028261B5F41A90013EC13 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +27,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		55D028121B5F40FA0013EC13 /* Code Logging Creator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Code Logging Creator"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D028121B5F40FA0013EC13 /* clc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = clc; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D028151B5F40FA0013EC13 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55D0281C1B5F410B0013EC13 /* CLCCodeReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCCodeReader.h; sourceTree = "<group>"; };
+		55D0281D1B5F410B0013EC13 /* CLCCodeReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCCodeReader.m; sourceTree = "<group>"; };
+		55D0281E1B5F410B0013EC13 /* CLCCodeWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCCodeWriter.h; sourceTree = "<group>"; };
+		55D0281F1B5F410B0013EC13 /* CLCCodeWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCCodeWriter.m; sourceTree = "<group>"; };
+		55D028201B5F410B0013EC13 /* CLCInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLCInterface.h; sourceTree = "<group>"; };
+		55D028211B5F410B0013EC13 /* CLCInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLCInterface.m; sourceTree = "<group>"; };
+		55D028251B5F41A90013EC13 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		55D028261B5F41A90013EC13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +53,8 @@
 		55D028091B5F40FA0013EC13 = {
 			isa = PBXGroup;
 			children = (
+				55D028251B5F41A90013EC13 /* LICENSE */,
+				55D028261B5F41A90013EC13 /* README.md */,
 				55D028141B5F40FA0013EC13 /* Code Logging Creator */,
 				55D028131B5F40FA0013EC13 /* Products */,
 			);
@@ -49,7 +63,7 @@
 		55D028131B5F40FA0013EC13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55D028121B5F40FA0013EC13 /* Code Logging Creator */,
+				55D028121B5F40FA0013EC13 /* clc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +72,12 @@
 			isa = PBXGroup;
 			children = (
 				55D028151B5F40FA0013EC13 /* main.m */,
+				55D0281C1B5F410B0013EC13 /* CLCCodeReader.h */,
+				55D0281D1B5F410B0013EC13 /* CLCCodeReader.m */,
+				55D0281E1B5F410B0013EC13 /* CLCCodeWriter.h */,
+				55D0281F1B5F410B0013EC13 /* CLCCodeWriter.m */,
+				55D028201B5F410B0013EC13 /* CLCInterface.h */,
+				55D028211B5F410B0013EC13 /* CLCInterface.m */,
 			);
 			path = "Code Logging Creator";
 			sourceTree = "<group>";
@@ -79,7 +99,7 @@
 			);
 			name = "Code Logging Creator";
 			productName = "Code Logging Creator";
-			productReference = 55D028121B5F40FA0013EC13 /* Code Logging Creator */;
+			productReference = 55D028121B5F40FA0013EC13 /* clc */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -118,6 +138,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D028241B5F410B0013EC13 /* CLCInterface.m in Sources */,
+				55D028231B5F410B0013EC13 /* CLCCodeWriter.m in Sources */,
+				55D028271B5F41A90013EC13 /* README.md in Sources */,
+				55D028221B5F410B0013EC13 /* CLCCodeReader.m in Sources */,
 				55D028161B5F40FA0013EC13 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,14 +229,14 @@
 		55D0281A1B5F40FA0013EC13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = clc;
 			};
 			name = Debug;
 		};
 		55D0281B1B5F40FA0013EC13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = clc;
 			};
 			name = Release;
 		};

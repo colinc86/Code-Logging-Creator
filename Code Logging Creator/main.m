@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CLCInterface.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        CLCInterface *interface = [[CLCInterface alloc] init];
+        [interface interpetArguments:argv];
     }
+    
     return 0;
 }
