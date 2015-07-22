@@ -54,8 +54,8 @@ A `xm` file is created and printed on-screen (or saved to file if a name is spec
 %hook ClassA
 
 - (void)methodA {
-  %log;
-  %orig;
+    %log;
+    %orig;
 }
 
 %end
@@ -67,8 +67,8 @@ A `xm` file is created and printed on-screen (or saved to file if a name is spec
 %hook ClassC
 
 - (id)methodC:(int)arg {
-  %log;
-  return %orig(arg);
+    %log;
+    return %orig(arg);
 }
 
 %end
@@ -90,7 +90,7 @@ In Example 1, the final output would be the following.
 - (void)methodA;
 @end
 
-CHRegisterClass(ClassA);
+CHDeclareClass(ClassA);
 
 CHMethod(0, void, ClassA, methodA) {
     NSLog(@"ClassA: methodA");
@@ -101,7 +101,7 @@ CHMethod(0, void, ClassA, methodA) {
 - (id)methodC:(int)arg;
 @end
 
-CHRegisterClass(ClassC);
+CHDeclareClass(ClassC);
 
 CHMethod(1, id, ClassC, methodC, int, arg) {
     NSLog(@"ClassC: methodC");
