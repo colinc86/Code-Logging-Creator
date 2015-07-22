@@ -15,10 +15,10 @@ Argument|Description
 `-v` | Print the current version number.
 `-c` | Include class declarations in code.
 `-i` | Include interface declarations in code.
-`-l` | Create Logos code file.
+`-l` | (Default) Create Logos code file.
 `-ch` | Create CaptainHook code file.
 
-### Input file
+### Input file (required)
 A valid Objective-C header file.
 
 ### Output file name (optional)
