@@ -1,6 +1,6 @@
 # Code Logging Creator
 
-Code Logging Creator (clc) is a command line utility that reads an Objective-C header file and creates a `xm` file to be compilied by the jailbreak development tool Theos and/or a `mm` file to be use with the CaptainHook framework. It writes hook methos and logs method of the classes specified. It optionally includes `@class` and `@interface` declarations and allows the user to select which classes should be used. It is an alternative to Logify which can be obtained by installing Theos.
+Code Logging Creator (clc) is a command line utility that reads an Objective-C header file and creates a `xm` file to be compiled by the jailbreak development tool Theos and/or a `mm` file to be use with the CaptainHook framework. It writes hook methods and logs each method of the classes specified. It optionally includes `@class` and `@interface` declarations and allows the user to select which classes should be used. It is an alternative to Logify which can be obtained by installing Theos.
 
 ## Usage
 
