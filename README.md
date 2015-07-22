@@ -25,7 +25,8 @@ A valid Objective-C header file.
 
 The name and location of the file to write to. If this value is not passed, then the created code is printed on-screen.
 
-## Example 1
+## Examples
+### Example 1
 Entering the following in Terminal reads the file `ExampleHeader.h` and generates a `xm` file with interface delcarations and hook methods.
 
 ```
@@ -73,7 +74,7 @@ A `xm` file is created and printed on-screen (or saved to file if a name is spec
 %end
 ```
 
-## Example 2
+### Example 2
 Optionally, CaptianHook code files can be generated using the `-ch` argument.
 
 ```
