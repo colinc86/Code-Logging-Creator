@@ -20,7 +20,6 @@
 
 - (void)createCode;
 
-- (void)printVersionText;
 - (void)printHelpText;
 - (void)printInputErrorText;
 - (void)printClassPrompt:(NSMutableArray *)classObjects;

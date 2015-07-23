@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define CLC_NAME                    "Class Log Creator"
+#define CLC_NAME                    "Code Logging Creator"
 #define USAGE_STRING                "Usage: ./clc [arguments] <inputFilePath> <outputFileName>"
 #define MORE_INFORMATION_STRING     "Type ./clc -h (return) for more information."
 #define INPUT_ERROR_STRING          "Input is in the wrong format."

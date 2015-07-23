@@ -312,7 +312,7 @@
 
 - (void)addHeader:(NSMutableString *)string {
     [string appendString:@"\n// ********************************************\n"];
-    [string appendString:@"// Created by Code Logging Creator (clc)\n"];
+    [string appendString:@"// Created by Code Logging Creator\n"];
     [string appendString:@"// ********************************************\n\n"];
 }
 
