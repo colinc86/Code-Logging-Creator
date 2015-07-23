@@ -12,11 +12,10 @@ Code Logging Creator (clc) is a command line utility that reads an Objective-C h
 Argument|Description
 --------|-----------
 `-h` | Show the help screen.
-`-v` | Print the current version number.
 `-c` | Include class declarations in code.
 `-i` | Include interface declarations in code.
-`-l` | (Default) Create Logos code file.
-`-ch` | Create CaptainHook code file.
+`-l` | (Default) Create Logos code.
+`-ch` | Create CaptainHook code.
 
 ### Input file (required)
 A valid Objective-C header file.

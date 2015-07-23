@@ -62,11 +62,6 @@
                     [self printHelpText];
                     break;
                 }
-                else if (strcmp(argument, ARGUMENT_VERSION) == 0) {
-                    finished = YES;
-                    [self printVersionText];
-                    break;
-                }
                 else if (strcmp(argument, ARGUMENT_INTERFACE) == 0) {
                     self.interfaceDeclarations = YES;
                 }
@@ -133,37 +128,43 @@
 #pragma mark - Private methods
 
 - (void)createCode {
-    // Get the input path and create a dictionary representation of the header
     printf("Reading header file...\n");
+    
     NSString *inputPath = [self formatPath:[NSString stringWithUTF8String:self.inFile] isInputFile:YES];
     NSMutableArray *classObjects = [[[CLCCodeReader alloc] init] classObjectsWithContentsOfHeaderFile:inputPath];
     
     if (classObjects != nil) {
         // If the file was successfully read
-        // Check code to create and set default if necessary
-        if (!self.createLogosCode && !self.createCaptainHookCode) {
-            self.createLogosCode = YES;
-        }
         
-        // Print the objects and edit array based on response to prompt
-        [self printClassPrompt:classObjects];
-        
-        // Get the output path and write the code to file(s)
-        NSString *outputPath = nil;
-        if (self.outFile != NULL) {
-            outputPath = [self formatPath:[NSString stringWithUTF8String:self.outFile] isInputFile:NO];
-        }
-        
-        CLCCodeWriter *writer = [[CLCCodeWriter alloc] init];
-        writer.delegate = self;
-        
-        NSError *error = [writer createCode:classObjects atPath:outputPath includeInterfaceDeclarations:self.interfaceDeclarations includeClassDeclarations:self.classDeclarations createLogos:self.createLogosCode createCH:self.createCaptainHookCode];
-        
-        if (error != nil) {
-            printf("Error: %s\n\n", error.localizedDescription.UTF8String);
+        if (classObjects.count > 0) {
+            // Check code to create and set default if necessary
+            if (!self.createLogosCode && !self.createCaptainHookCode) {
+                self.createLogosCode = YES;
+            }
+            
+            // Print the objects and edit array based on response to prompt
+            [self printClassPrompt:classObjects];
+            
+            // Get the output path and write the code to file(s)
+            NSString *outputPath = nil;
+            if (self.outFile != NULL) {
+                outputPath = [self formatPath:[NSString stringWithUTF8String:self.outFile] isInputFile:NO];
+            }
+            
+            CLCCodeWriter *writer = [[CLCCodeWriter alloc] init];
+            writer.delegate = self;
+            
+            NSError *error = [writer createCode:classObjects atPath:outputPath includeInterfaceDeclarations:self.interfaceDeclarations includeClassDeclarations:self.classDeclarations createLogos:self.createLogosCode createCH:self.createCaptainHookCode];
+            
+            if (error != nil) {
+                printf("Error: %s\n\n", error.localizedDescription.UTF8String);
+            }
+            else {
+                printf("\n");
+            }
         }
         else {
-            printf("\n");
+            printf("No interface declarations were found.\n\n");
         }
     }
 }
@@ -192,12 +193,8 @@
 
 #pragma mark - Text output
 
-- (void)printVersionText {
-    printf("%s\n\n", CLC_VERSION);
-}
-
 - (void)printHelpText {
-    printf("%s v%s\n\n", CLC_NAME, CLC_VERSION);
+    printf("%s\n\n", CLC_NAME);
     
     printf("%s\n", USAGE_STRING);
     printf("%-20s %s\n", "[arguments]", "One or more arguments from the list below.");
@@ -207,9 +204,10 @@
     printf("%-15s %s\n", "Argument", "Description");
     printf("%-15s %s\n", "========", "===========");
     printf("%-15s %s\n", "-h", "Print this help menu.");
-    printf("%-15s %s\n", "-v", "Print the version number.");
     printf("%-15s %s\n", "-c", "Include class declarations.");
-    printf("%-15s %s\n", "-i", "Include interface declarations.\n");
+    printf("%-15s %s\n", "-i", "Include interface declarations.");
+    printf("%-15s %s\n", "-l", "(Default) Create Logos code.");
+    printf("%-15s %s\n", "-ch", "Create CaptainHook code.\n");
 }
 
 - (void)printInputErrorText {
